@@ -5,7 +5,7 @@ locust.stats.PERCENTILES_TO_CHART = [0.98]
 locust.stats.PERCENTILES_TO_REPORT = [0.98]
 locust.stats.PERCENTILES_TO_STATISTICS = [0.98]
 
-class WelcomeToRestfulBookerTest(HttpUser):
+class TestPer98(HttpUser):
 
     token = None #для хранения токена
     booking_id = None #для хранения букинг_ид

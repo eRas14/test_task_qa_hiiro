@@ -5,7 +5,7 @@ locust.stats.PERCENTILES_TO_CHART = [0.8]
 locust.stats.PERCENTILES_TO_REPORT = [0.8]
 locust.stats.PERCENTILES_TO_STATISTICS = [0.8]
 
-class TestCer80(HttpUser):
+class TestPer80(HttpUser):
 
     @task()
     def create_booking(self):
