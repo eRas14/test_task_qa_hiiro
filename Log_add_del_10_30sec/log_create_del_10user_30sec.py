@@ -14,9 +14,9 @@ class WelcomeToRestfulBookerTest(HttpUser):
         }
         response = self.client.post(url, json=token_data)
         self.token = response.json().get("token")
-        self.add_booking()
+        self.create_booking()
 
-    def add_booking(self):
+    def create_booking(self):
         url = "https://restful-booker.herokuapp.com/booking"
         booking_data= {
             "firstname" : "Aibek",
