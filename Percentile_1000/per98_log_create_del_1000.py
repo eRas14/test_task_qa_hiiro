@@ -1,6 +1,11 @@
 from locust import HttpUser, task
+import locust.stats
 
-class UserTest(HttpUser):
+locust.stats.PERCENTILES_TO_CHART = [0.98]
+locust.stats.PERCENTILES_TO_REPORT = [0.98]
+locust.stats.PERCENTILES_TO_STATISTICS = [0.98]
+
+class WelcomeToRestfulBookerTest(HttpUser):
 
     token = None #для хранения токена
     booking_id = None #для хранения букинг_ид
@@ -32,7 +37,7 @@ class UserTest(HttpUser):
         response = self.client.post(url, json=booking_data)
         self.booking_id = response.json().get("bookingid") 
         self.del_booking()
-
+        
     def del_booking(self): 
         url = f"https://restful-booker.herokuapp.com/booking/{self.booking_id}"
         headers = {
